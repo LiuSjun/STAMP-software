@@ -5,13 +5,12 @@
 [Shuaijun Liu](https://alex1234.github.io/), [Dong Qi], [Jin Chen]
 
 [[`Paper`]] [[`Demo`](https://segmeg.com/demo)]
-![SAM design](assets/model_diagram.png?raw=true)
+![SAM design](图片23.png)
 
-The **Segment Anything Model (SAM)** produces high quality object masks from input prompts such as points or boxes, and it can be used to generate masks for all objects in an image. It has been trained on a [dataset](https://segment-anything.com/dataset/index.html) of 11 million images and 1.1 billion masks, and has strong zero-shot performance on a variety of segmentation tasks.
+The **adaptive SAM for the Task of Planted field (PF) segmentation (STAMP)** produces high quality Planted field masks from remote sensing image, and it can be used to extract PF in an image. It has been improved based on 'Segment Anything Model', and has strong zero-shot performance on a remote sensing image.
 
 <p float="left">
-  <img src="assets/masks1.png?raw=true" width="37.25%" />
-  <img src="assets/masks2.jpg?raw=true" width="61.5%" /> 
+  <img src="图片23.png?raw=true" width="37.25%" />
 </p>
 
 ## Installation
