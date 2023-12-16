@@ -15,16 +15,24 @@ The **adaptive SAM for the Task of Planted field (PF) segmentation (STAMP)** pro
 
 ## Installation
 
+## Installation
+
 The code requires `python>=3.8`, as well as `pytorch>=1.7` and `torchvision>=0.8`. Please follow the instructions [here](https://pytorch.org/get-started/locally/) to install both PyTorch and TorchVision dependencies. Installing both PyTorch and TorchVision with CUDA support is strongly recommended.
 
-Install STAMP:
+Install Segment Anything:
 
 ```
-pip install torchvision>=0.8 pytorch>=1.7
-```
+pip install git+https://github.com/facebookresearch/segment-anything.git
 ```
 
-The following optional dependencies are necessary for mask post-processing, saving masks as .tiff format.
+or clone the repository locally and install with
+
+```
+git clone git@github.com:facebookresearch/segment-anything.git
+cd segment-anything; pip install -e .
+```
+
+The following optional dependencies are necessary for mask post-processing, saving masks in COCO format, the example notebooks, and exporting the model in ONNX format. `jupyter` is also required to run the example notebooks.
 
 ```
 pip install opencv-python pycocotools matplotlib onnxruntime onnx
@@ -51,7 +59,11 @@ mask_generator = SamAutomaticMaskGenerator(sam)
 masks = mask_generator.generate(<your_image>)
 ```
 
-Additionally, masks can be generated for images from the:
+Additionally, masks can be generated for images from the command line:
+
+```
+python scripts/amg.py --checkpoint <path/to/checkpoint> --model-type <model_type> --input <image_or_folder> --output <path/to/output>
+```
 
 See the examples notebooks on [using SAM with prompts](/notebooks/predictor_example.ipynb) and [automatically generating masks](/notebooks/automatic_mask_generator_example.ipynb) for more details.
 
