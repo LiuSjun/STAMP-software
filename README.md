@@ -2,10 +2,10 @@
 
 **[Beijing Normal University, CHEN-Lab](http://www.chen-lab.club/)**
 
-[Shuaijun Liu](https://alex1234.github.io/), [Dong Qi], [Jin Chen]
+[Shuaijun Liu](https://alex1234.github.io/), [Dong Qi], [Xuehong Chen], [Xiuchun Dong], [Ping Huang], [Peng Yang], [Jin Chen]
 
 [[`Paper`]] [[`Demo`](https://segmeg.com/demo)]
-![SAM design](图片23.png)
+![SAM design](pic/Flowchart_Stamp.png)
 
 The **adaptive SAM for the Task of Planted field (PF) segmentation (STAMP)** produces high quality Planted field masks from remote sensing image, and it can be used to extract PF in an image. It has been improved based on 'Segment Anything Model', and has strong zero-shot performance on a remote sensing image.
 
@@ -110,7 +110,7 @@ If you use SAM or SA-1B in your research, please use the following BibTeX entry.
 ```
 @article{kirillov2023stamp,
   title={STAMP},
-  author={Leo Shuaijun, Chen Jin, Dong Qi, Chen Xuehong},
+  author={Liu Shuaijun, Dong Qi, Dong Chunxiu, Huang Ping, Yang Peng, Chen Xuehong, Chen Jin},
   journal={arXiv:####},
   year={2023}
 }
