@@ -1,23 +1,46 @@
 # STAMP Software
 
-**[Beijing Normal University, CHEN-Lab](http://www.chen-lab.club/)**
+> **[Beijing Normal University, CHEN-Lab](http://www.chen-lab.club/)**
+> 
+> Contributors: [Shuaijun Liu](https://alex1234.github.io/), Dong Qi, Xuehong Chen, Xiuchun Dong, Ping Huang, Peng Yang, Jin Chen
+> 
+> Resources: [[`Academic Paper`]] [[`Demo`]]
 
-[Shuaijun Liu](https://alex1234.github.io/), [Dong Qi], [Xuehong Chen], [Xiuchun Dong], [Ping Huang], [Peng Yang], [Jin Chen]
+<p align="center">
+  <img src="pic/Flowchart_Stamp.png?raw=true" width="50.25%" />
+</p>
 
-[[`Paper`]] [[`Demo`](https://segmeg.com/demo)]
-![STAMP design](pic/Flowchart_Stamp.png)
-
-**An adaptive Segment Anything Model (SAM) for the task of planted field segmentation from remote sensing imagery** produces high quality Planted field masks from remote sensing image, and it can be used to extract PF in an image. It has been improved based on 'Segment Anything Model', and has strong zero-shot performance on a remote sensing image.
+## Overview
+**STAMP (Segment Anything Model for Planted Fields)** is an adaptive model designed for segmentation of planted fields from remote sensing imagery. Building upon the 'Segment Anything Model', it boasts enhanced zero-shot performance in remote sensing image analysis.
 
 <p align="center">
   <img src="pic/Fig2.png?raw=true" width="37.25%" />
 </p>
 
+## Installation and Requirements
+
+### System Requirements
+- Python 3.8+
+- PyTorch 1.7.0+
+- CUDA 11.0+ (Recommended)
+
+### Installation Instructions
+STAMP can be easily installed via pip or by cloning the repository.
+
+### Additional Dependencies
+For mask post-processing and running example notebooks, additional packages are required.
+
+### Prerequisites
+- numpy 1.24.3
+- torchvision 0.8+
+- GDAL, OpenCV
+- [Albumentations](https://pypi.org/project/albumentations/) 1.3.1+
+
 ## Installation
 
 The code requires `python>=3.8`, as well as `pytorch>=1.7` and `torchvision>=0.8`. Please follow the instructions [here](https://pytorch.org/get-started/locally/) to install both PyTorch and TorchVision dependencies. Installing both PyTorch and TorchVision with CUDA support is strongly recommended.
 
-Install Segment Anything:
+Install STAMP:
 
 ```
 pip install STAMP.git
@@ -36,7 +59,7 @@ The following optional dependencies are necessary for mask post-processing,`jupy
 pip install opencv-python pycocotools matplotlib onnxruntime onnx
 ```
 
-## <a name="GettingStartedForSTAMP"></a>Getting Started
+## Getting Started with STAMP
 
 First download STAMP. Then the model can be used in just a few lines to get masks:
 
@@ -57,48 +80,58 @@ mask_generator = stampWindow(your_image)
 masks = mask_generator.generate(your_image)
 ```
 
-See the examples notebooks on [using SAM with prompts](/notebooks/STMAP_example.ipynb) for more details.
+For detailed examples, see our [notebooks](/notebooks/STMAP_example.ipynb).
 
 <p float="left">
   <img src="pic/Fig3.png?raw=true" width="36.1%" />
   <img src="pic/Fig4.png?raw=true" width="48.9%" />
 </p>
 
-### Software demo
+## Demonstrations
 
-The `STAMP` folder has a simple one page app which shows how to run mask prediction with the exported model in aexecutable program. Please see [`STAMPWindow.md`](https://github.com/LiuSjun/STAMP/README.md) for more details.
+### Software Demo
+Explore the `STAMP` one-page app for intuitive mask prediction. Detailed instructions are available in [`STAMPWindow.md`](https://github.com/LiuSjun/STAMP/README.md).
 
-## <a name="Models"></a>Model Select
+#### Demo Steps
+1. **Start the Demo**: Double-click 'STAMP.exe'.
+   <p align="center">
+     <img src="pic/Step1.gif?raw=true" width="50.25%" />
+   </p>
 
-Three model versions of the model are available with different time-consuming models. These models can be instantiated by running
+2. **Select and Open Image**.
+   <p align="center">
+     <img src="pic/step2.gif?raw=true" width="50.25%" />
+   </p>
 
+3. **Import or Auto-Select Processing Area**.
+   <p align="center">
+     <img src="pic/step3.gif?raw=true" width="50.25%" />
+   </p>
 
-Click the links below to download the checkpoint for the corresponding model type.
+4. **Extract Missing PFs** (manually or automatically).
+   <p align="center">
+     <img src="pic/step4.gif?raw=true" width="50.25%" />
+     <img src="pic/step5.gif?raw=true" width="50.25%" />
+   </p>
 
+### FieldSeg-DA Integration
+Combining STAMP with FieldSeg-DA for enhanced accuracy:
 
-## License
+<p align="center">
+  <img src="pic/FieldSegDA.png?raw=true" width="50.25%" />
+</p>
 
-The model is licensed under the [beta 3.0.4 license](LICENSE).
+## Model Selection
+STAMP offers three model versions to cater to different time constraints:
 
-## Contributing
+<p align="center">
+  <img src="pic/Model_Select.gif?raw=true" width="50.25%" />
+</p>
 
-See [contributing] and the [code of conduct].
+## License and Citation
 
-## Contributors
+### License
+STAMP is licensed under [beta 3.0.2](LICENSE).
 
-The STAMP project was made possible with the help of many contributors (alphabetical):
-
-Liu Shuaijun, Chen Jin, Dong Qi, Chen Xuehong
-
-## Citing Segment Anything
-
-If you use SAM or SA-1B in your research, please use the following BibTeX entry.
-
-```
-@article{kirillov2023stamp,
-  title={STAMP},
-  author={Liu Shuaijun, Dong Qi, Dong Chunxiu, Huang Ping, Yang Peng, Chen Xuehong, Chen Jin},
-  journal={arXiv:####},
-  year={2023}
-}
-```
+### How to Cite
+Please cite STAMP or FieldSeg-DA in your research.
