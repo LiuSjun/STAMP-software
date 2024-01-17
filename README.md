@@ -134,4 +134,21 @@ STAMP offers three model versions to cater to different time constraints:
 STAMP is licensed under [beta 3.0.2](LICENSE).
 
 ### How to Cite
-Please cite STAMP or FieldSeg-DA in your research.
+If you use STAMP or FieldSeg-DA in your research, please use the following BibTeX entry.
+
+```
+@article{kirillov2023stamp,
+  title={STAMP},
+  author={Liu Shuaijun, Dong Qi, Dong Chunxiu, Huang Ping, Yang Peng, Chen Xuehong, Chen Jin},
+  journal={arXiv:####},
+  year={2023}
+}
+@article{liu2022deep,
+  title={A deep learning method for individual arable field (IAF) extraction with cross-domain adversarial capability},
+  author={Liu, Shuaijun and Liu, Licong and Xu, Fei and Chen, Jin and Yuan, Yuhen and Chen, Xuehong},
+  journal={Computers and Electronics in Agriculture},
+  volume={203},
+  pages={107473},
+  year={2022},
+  publisher={Elsevier}
+}
